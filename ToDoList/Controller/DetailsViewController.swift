@@ -64,22 +64,32 @@ class DetailsViewController: UIViewController {
 
     @IBAction func deleteButton(_ sender: Any) {
         
-        let confirmDeleteAlert = UIAlertController(title: "Delete Task", message: "Are you sure", preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Delete", style: .destructive) { alert in
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "deleteTask"), object: nil,userInfo: ["deleteIndex" : self.index])
-            
-            let alert = UIAlertController(title: "Done", message: "Task Deleted", preferredStyle: .alert)
-            
-            let closeAction = UIAlertAction(title: "Ok", style: .default) { alert in
-                self.navigationController?.popViewController(animated: true)
-            }
-            alert.addAction(closeAction)
-            self.present(alert, animated: true,completion: nil)
-        }
-        confirmDeleteAlert.addAction(confirmAction)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default,handler: nil)
-        confirmDeleteAlert.addAction(cancelAction)
-        present(confirmDeleteAlert, animated: true,completion: nil)
+        let alert = MyAlertViewController(
+            title: "Hello world",
+            message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed massa a magna semper semper a eget justo",
+            imageName: "warning_icon")
+
+        alert.addAction(title: "OK", style: .default)
+        alert.addAction(title: "Cancel", style: .cancel)
+
+        present(alert, animated: true, completion: nil)
+        
+//        let confirmDeleteAlert = UIAlertController(title: "Delete Task", message: "Are you sure", preferredStyle: .alert)
+//        let confirmAction = UIAlertAction(title: "Delete", style: .destructive) { alert in
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "deleteTask"), object: nil,userInfo: ["deleteIndex" : self.index])
+//
+//            let alert = UIAlertController(title: "Done", message: "Task Deleted", preferredStyle: .alert)
+//
+//            let closeAction = UIAlertAction(title: "Ok", style: .default) { alert in
+//                self.navigationController?.popViewController(animated: true)
+//            }
+//            alert.addAction(closeAction)
+//            self.present(alert, animated: true,completion: nil)
+//        }
+//        confirmDeleteAlert.addAction(confirmAction)
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .default,handler: nil)
+//        confirmDeleteAlert.addAction(cancelAction)
+//        present(confirmDeleteAlert, animated: true,completion: nil)
         
        
        
