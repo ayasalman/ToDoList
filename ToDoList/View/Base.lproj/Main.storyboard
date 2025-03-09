@@ -110,7 +110,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EiK-A6-H1F">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/5/2025" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EiK-A6-H1F">
                                         <rect key="frame" x="8" y="39" width="377" height="19.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -182,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kJD-aw-EvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2518.320610687023" y="-94.366197183098592"/>
+            <point key="canvasLocation" x="2775" y="-94"/>
         </scene>
         <!--My Tasks-->
         <scene sceneID="LDa-Qe-5Ud">
@@ -286,7 +286,10 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="287.66666666666669" id="kSb-hO-t9o"/>
+                                    <constraint firstItem="t96-ES-5Cq" firstAttribute="top" secondItem="KOd-fc-xdE" secondAttribute="bottom" constant="5" id="1CJ-AW-9Eb"/>
+                                    <constraint firstItem="KOd-fc-xdE" firstAttribute="top" secondItem="6EE-yM-gMz" secondAttribute="top" id="6bc-yR-Vk4"/>
+                                    <constraint firstItem="KOd-fc-xdE" firstAttribute="leading" secondItem="6EE-yM-gMz" secondAttribute="leading" id="L6c-DQ-Aty"/>
+                                    <constraint firstAttribute="trailing" secondItem="KOd-fc-xdE" secondAttribute="trailing" id="WPB-oh-Y7w"/>
                                     <constraint firstItem="t96-ES-5Cq" firstAttribute="height" secondItem="6EE-yM-gMz" secondAttribute="height" multiplier="0.1" id="vsE-9x-Ayr"/>
                                 </constraints>
                             </stackView>
