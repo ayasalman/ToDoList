@@ -16,6 +16,8 @@ class ToDoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        toDoTableView.register(UINib(nibName: "ToDoTableViewCell", bundle: nil), forCellReuseIdentifier: "ToDoCell")
+        
         self.toDoArray = StorageManger.getData()
 
         toDoTableView.dataSource = self
@@ -42,7 +44,7 @@ extension ToDoViewController :  UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoTableViewCell", for: indexPath) as! ToDoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! ToDoTableViewCell
         cell.todoTitleLabel.text = toDoArray[indexPath.row].title
         //cell.textLabel?.text = toDoArray[indexPath.row]
         if toDoArray[indexPath.row].image != nil
@@ -70,6 +72,9 @@ extension ToDoViewController :  UITableViewDataSource, UITableViewDelegate
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
+    
+    
+
 }
 
 
