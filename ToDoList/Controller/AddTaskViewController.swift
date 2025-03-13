@@ -10,9 +10,8 @@ import UIKit
 class AddTaskViewController: UIViewController {
     
     var isCreated = true
-    var editedTask  : ToDoData?
-    var editedIndex : Int?
-    
+    var editedTask: ToDoData?
+    var editedIndex: Int?
     
     @IBOutlet weak var taskImageView: UIImageView!
     
@@ -21,12 +20,10 @@ class AddTaskViewController: UIViewController {
     
     @IBOutlet weak var mainButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if isCreated == false
-        {
+        if isCreated == false {
             mainButton.setTitle("Edit", for: .normal)
             navigationItem.title = "Edit Task"
             
@@ -36,33 +33,33 @@ class AddTaskViewController: UIViewController {
                 taskImageView.image = task.image
             }
         }
-
-        
     }
-    
 
     @IBAction func addTaskButton(_ sender: Any) {
         if isCreated {
-            let todo =  ToDoData(title: titleTextFeild.text!,image: taskImageView.image,details: detailsTextView.text)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "NewTaskAdded"), object: nil, userInfo: ["addedTask" : todo]) //created notifaction to send data from this vc to another
+            let todo =  ToDoData(title: titleTextFeild.text!, image: taskImageView.image, details: detailsTextView.text)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "NewTaskAdded"), object: nil, userInfo: ["addedTask": todo])
+            // created notifaction to send data from this vc to another
             let alert = UIAlertController(title: "Done", message: "Task Added", preferredStyle: UIAlertController.Style.alert)
-            present(alert, animated: true,completion: nil)
+            present(alert, animated: true, completion: nil)
             
-            let closeAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { action in
+            let closeAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) {_ in
                 self.tabBarController?.selectedIndex = 0
                 self.titleTextFeild.text = ""
                 self.detailsTextView.text = ""
             }
             alert.addAction(closeAction)
             
-        }else{
+        } else {
             let todo = ToDoData(title: titleTextFeild.text!, image: taskImageView.image, details: detailsTextView.text)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CurrentTaskEdited"), object: nil,userInfo: ["editedTask":todo,"editedTaskIndex":editedIndex])
+            NotificationCenter.default.post(name:
+            NSNotification.Name(rawValue: "CurrentTaskEdited"), object: nil, userInfo:
+                                                ["editedTask": todo, "editedTaskIndex": editedIndex!])
             
             let alert = UIAlertController(title: "Done", message: "Task Edited", preferredStyle: UIAlertController.Style.alert)
-            present(alert, animated: true,completion: nil)
+            present(alert, animated: true, completion: nil)
             
-            let closeAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { action in
+            let closeAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { _ in
                 self.navigationController?.popViewController(animated: true)
                 self.titleTextFeild.text = ""
                 self.detailsTextView.text = ""
@@ -70,30 +67,21 @@ class AddTaskViewController: UIViewController {
             alert.addAction(closeAction)
         }
         
-        
       // print(titleTextFeild.text)
        // print(detailsTextView.text)
     }
-    
     
     @IBAction func addImageButton(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true, completion: nil)
-        
-        
     }
-    
-    
 }
-
-
-extension AddTaskViewController :  UIImagePickerControllerDelegate & UINavigationControllerDelegate
-{
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
-        dismiss(animated: true,completion: nil)
+extension AddTaskViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        dismiss(animated: true, completion: nil)
         taskImageView.image = image
     }
     

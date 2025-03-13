@@ -6,9 +6,8 @@
 //
 
 import UIKit
-struct ToDoData
-{
-    var title : String
-    var image : UIImage? = nil
-    var details : String? = nil
+struct ToDoData {
+    var title: String
+    var image: UIImage?
+    var details: String? 
 }

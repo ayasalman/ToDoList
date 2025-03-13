@@ -9,15 +9,12 @@ import UIKit
 
 class ToDoTableViewCell: UITableViewCell {
     
-    
-
     @IBOutlet weak var todoImageView: UIImageView!
     
     @IBOutlet weak var todoTitleLabel: UILabel!
     
     @IBOutlet weak var todoCreationLabel: UILabel!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

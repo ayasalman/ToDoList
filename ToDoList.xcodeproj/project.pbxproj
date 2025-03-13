@@ -23,8 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		030586E22D81A8F300C4596A /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		030586E72D81AF3C00C4596A /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
+		030586E22D81A8F300C4596A /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = ToDoList.app; path = "/Users/aya/Desktop/ToDoList/build/Debug-iphoneos/ToDoList.app"; sourceTree = "<absolute>"; };
+		030586E72D81AF3C00C4596A /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToDoTableViewCell.swift; path = ../ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		030586E82D81AF3C00C4596A /* ToDoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToDoTableViewCell.xib; sourceTree = "<group>"; };
 		034754402D7B863D00454809 /* TodoCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoCoreData.xcdatamodel; sourceTree = "<group>"; };
 		036D25CF2D7DC2940013BBE0 /* StorageManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManger.swift; sourceTree = "<group>"; };
@@ -74,6 +74,8 @@
 			children = (
 				038331B42D77B90C0077BE7D /* Main.storyboard */,
 				038331B92D77B91D0077BE7D /* LaunchScreen.storyboard */,
+				030586E72D81AF3C00C4596A /* ToDoTableViewCell.swift */,
+				030586E82D81AF3C00C4596A /* ToDoTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -90,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				038331AD2D77B90C0077BE7D /* ToDoList */,
-				030586E22D81A8F300C4596A /* ToDoList.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,8 +105,6 @@
 				036D25D12D7DC7D70013BBE0 /* Controller */,
 				036D25D42D7DC8570013BBE0 /* DataBase */,
 				038331B72D77B91D0077BE7D /* Assets.xcassets */,
-				030586E72D81AF3C00C4596A /* ToDoTableViewCell.swift */,
-				030586E82D81AF3C00C4596A /* ToDoTableViewCell.xib */,
 				038331BC2D77B91D0077BE7D /* Info.plist */,
 				0347543F2D7B863D00454809 /* TodoCoreData.xcdatamodeld */,
 			);
@@ -119,6 +118,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 038331BF2D77B91D0077BE7D /* Build configuration list for PBXNativeTarget "ToDoList" */;
 			buildPhases = (
+				030586EB2D824D5E00C4596A /* SwiftLint */,
 				038331A72D77B90C0077BE7D /* Sources */,
 				038331A82D77B90C0077BE7D /* Frameworks */,
 				038331A92D77B90C0077BE7D /* Resources */,
@@ -178,6 +178,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		030586EB2D824D5E00C4596A /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Adds support for Apple Silicon brew directory\n# export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint \nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		038331A72D77B90C0077BE7D /* Sources */ = {
